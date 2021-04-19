@@ -20,7 +20,7 @@ const calculateRoundAverages = (golfScores) => {
     for (let j = 0; j < golfScore.length; j++) {
       sumPerRound += golfScore[j];
     };
-    console.log("The average score for round " + (i + 1) + " is " + (sumPerRound / 18).toFixed(2));
+    console.log("The average score for round " + (i + 1) + " is " + (sumPerRound / golfScore.length).toFixed(2));
   };
 };
 
@@ -47,13 +47,13 @@ const calculateRoundAverages = (golfScores) => {
     for (let j = 0; j < golfScore.length; j++) {
       sumPerRound += golfScore[j];
     };
-    averageArr.push((sumPerRound / 18).toFixed(2));
+    averageArr.push((sumPerRound / golfScore.length).toFixed(2));
   };
   let averagesSum = 0;
   for (let k = 0; k < averageArr.length; k++) {
     averagesSum += parseFloat(averageArr[k]);
   };
-  console.log("The average of averages is " + (averagesSum / 8).toFixed(2));
+  console.log("The average of averages is " + (averagesSum / averageArr.length).toFixed(2));
 };
 
 
