@@ -1,10 +1,8 @@
 /**
- * 1. Declare two functions: calculateGolfAverages and calculateTotalAverages
+ * 1. Declare two functions: calculateRoundAverages and calculateTotalAverages
  */
-
-
 /**
- * 2. Implement calculateGolfAverages
+ * 2. Implement calculateRoundAverages
  * 
  * This function should print out the average score of each round
  * This function should receive the "golfScores" array as a parameter
@@ -15,6 +13,16 @@
  * "The average score for round 4 is 1.33"
 */
 
+const calculateRoundAverages = (golfScores) => {
+  for (let i = 0; i < golfScores.length; i++) {
+    let sumPerRound = 0;
+    const golfScore = golfScores[i];
+    for (let j = 0; j < golfScore.length; j++) {
+      sumPerRound += golfScore[j];
+    };
+    console.log("The average score for round " + (i + 1) + " is " + (sumPerRound / 18).toFixed(2));
+  };
+};
 
 /**
  * 3. Implement calculateTotalAverages
@@ -28,6 +36,25 @@
  * "The average of averages is 1.39"
  */
 
+
+ const calculateTotalAverages = (golfScores) => {
+  // because I can't access the variable sumPerRound from the calculateRoundAverages() function, I'm repeating the function body here. Tried around a bit, but didn't find another way.
+  // Very open for tips here :)
+  let averageArr = [];
+  for (let i = 0; i < golfScores.length; i++) {
+    let sumPerRound = 0;
+    const golfScore = golfScores[i];
+    for (let j = 0; j < golfScore.length; j++) {
+      sumPerRound += golfScore[j];
+    };
+    averageArr.push((sumPerRound / 18).toFixed(2));
+  };
+  let averagesSum = 0;
+  for (let k = 0; k < averageArr.length; k++) {
+    averagesSum += parseFloat(averageArr[k]);
+  };
+  console.log("The average of averages is " + (averagesSum / 8).toFixed(2));
+};
 
 
 ///! ----- PLEASE DO NOT EDIT BELOW THIS ---- !///
